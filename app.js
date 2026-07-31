@@ -132,12 +132,17 @@ document.addEventListener('DOMContentLoaded', () => {
         showState('loading');
         
         try {
-            const response = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|ru`);
+            const response = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ru&dt=t&q=${encodeURIComponent(text)}`);
             
             if (!response.ok) throw new Error('Translation failed');
             
             const data = await response.json();
-            const translatedText = data.responseData.translatedText;
+            let translatedText = '';
+            if (data && data[0]) {
+                data[0].forEach(item => {
+                    if (item[0]) translatedText += item[0];
+                });
+            }
             
             if (!translatedText) throw new Error('No translation returned');
 

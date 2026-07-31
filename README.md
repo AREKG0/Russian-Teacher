@@ -11,7 +11,7 @@
 
 ## ✨ Features
 
-- **Instant Translation**: Type any English sentence and get accurate Russian translations powered by the MyMemory Translation API.
+- **Instant Translation**: Type any English sentence and get accurate Russian translations powered by the Google Translate API.
 - **Phonetic Transliteration**: Automatically converts Cyrillic Russian text into easy-to-read English characters (e.g., "Привет" → "Privet") to help new learners speak with confidence.
 - **Modern Premium Interface**: A sleek, dark-themed glassmorphism design with dynamic ambient background animations.
 - **One-Click Copy**: Instantly copy translations and pronunciations to your clipboard with seamless toast notifications.
@@ -46,7 +46,7 @@ All you need is a modern web browser!
 - **HTML5**: Semantic and accessible structure.
 - **CSS3 (Vanilla)**: Custom styling utilizing CSS variables, Flexbox, glassmorphism (`backdrop-filter`), and keyframe animations. No external UI frameworks were used.
 - **JavaScript (Vanilla)**: Handles async API requests, custom transliteration logic, and DOM manipulation.
-- **MyMemory API**: A free translation API used to fetch English-to-Russian translations.
+- **Google Translate API**: A free translation API endpoint used to fetch reliable English-to-Russian translations.
 
 ## 🤝 Contributing
 
