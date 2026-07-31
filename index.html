@@ -64,23 +64,34 @@
                     <div class="result-group">
                         <span class="result-label">Russian (Cyrillic)</span>
                         <div class="result-box russian-text" id="russian-output"></div>
-                        <button class="copy-btn" data-target="russian-output" aria-label="Copy Russian text">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                        <div class="action-buttons">
+                            <button class="action-btn tts-btn" id="listen-btn" aria-label="Listen to Russian pronunciation">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 11.995C17.004 13.3208 16.4774 14.5924 15.54 15.53" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19.07 4.93005C20.9447 6.80528 21.9979 9.34836 21.9979 12.0001C21.9979 14.6517 20.9447 17.1948 19.07 19.0701" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn copy-btn" data-target="russian-output" aria-label="Copy Russian text">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="result-group mt-4">
                         <span class="result-label">Pronunciation (Transliteration)</span>
                         <div class="result-box pronunciation-text" id="pronunciation-output"></div>
-                        <button class="copy-btn" data-target="pronunciation-output" aria-label="Copy Pronunciation">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                        <div class="action-buttons">
+                            <button class="action-btn copy-btn" data-target="pronunciation-output" aria-label="Copy Pronunciation">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -88,6 +99,16 @@
                     <div class="spinner"></div>
                     <p>Translating...</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="history-section hidden" id="history-section">
+            <div class="history-header">
+                <h2>Recent Translations</h2>
+                <button class="clear-history-btn" id="clear-history-btn">Clear</button>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- History items will be dynamically inserted here -->
             </div>
         </section>
         
