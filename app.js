@@ -164,6 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Trigger voice loading on startup
+    window.speechSynthesis.getVoices();
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
     // --- Text to Speech Logic ---
     function speakRussian() {
         const text = russianOutput.textContent;
@@ -172,6 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = 'ru-RU'; // Set language to Russian
         utterance.rate = 0.9;     // Slightly slower for learning
+        
+        // Explicitly try to find a Russian voice
+        const voices = window.speechSynthesis.getVoices();
+        const ruVoice = voices.find(voice => voice.lang.toLowerCase().includes('ru'));
+        if (ruVoice) {
+            utterance.voice = ruVoice;
+        }
         
         window.speechSynthesis.cancel(); // Stop any ongoing speech
         window.speechSynthesis.speak(utterance);
